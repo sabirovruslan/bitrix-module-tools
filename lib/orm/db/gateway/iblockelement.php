@@ -435,7 +435,7 @@ class IblockElement extends Gateway {
             $DB->Query("
                 update
                 b_iblock_element_prop_s".$this->iblockId()."
-                set PROPERTY_".$propertyId."=".$fileId."
+                set PROPERTY_".$propertyId."=".($fileId ? : 'null')."
                 where IBLOCK_ELEMENT_ID=".$id."
             ");
             return ;
